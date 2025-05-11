@@ -1,0 +1,180 @@
+
+    :root {
+      --primary-white: #ffffff;
+      --accent-green: #28a745;
+      --highlight-yellow: #ffc107;
+    }
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--primary-white);
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header.main-header {
+      background-color: var(--accent-green);
+      color: var(--primary-white);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      animation: slideDown 0.5s ease-in-out;
+    }
+
+    header.main-header h1 {
+      margin: 0;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      padding: 0;
+      margin: 0;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: var(--primary-white);
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--highlight-yellow);
+    }
+
+    section {
+      padding: 4rem 2rem;
+    }
+
+    section h2 {
+      color: var(--accent-green);
+      text-align: center;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    .about p {
+      max-width: 600px;
+      margin: auto;
+      text-align: center;
+      animation: fadeIn 1.5s ease forwards;
+    }
+
+    .portfolio .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .project {
+      border: 2px solid var(--accent-green);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+
+    .project img {
+      width: 100%;
+
+      display: 100%;
+    }
+
+    .project h3 {
+      background-color: var(--highlight-yellow);
+      margin: 0;
+      padding: 1rem;
+      text-align: center;
+      color: #333;
+    }
+
+    .contact form {
+      display: flex;
+      flex-direction: column;
+      max-width: 600px;
+      margin: auto;
+      gap: 1rem;
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    .contact label {
+      font-weight: bold;
+    }
+
+    .contact input,
+    .contact textarea {
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .contact button {
+      padding: 0.75rem;
+      border: none;
+      background-color: var(--accent-green);
+      color: var(--primary-white);
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .contact button:hover {
+      background-color: #218838;
+    }
+
+    footer {
+      background-color: #f1f1f1;
+      padding: 1rem;
+      text-align: center;
+      color: #666;
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      header.main-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 0.75rem;
+        margin-top: 1rem;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+    }
+  
